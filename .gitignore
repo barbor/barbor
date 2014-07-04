@@ -1,0 +1,10 @@
+# Sensitive information #
+#########################
+# Ignore configuration files that may contain sensitive information.
+*.feature
+.tests
+
+# Editors generated files #
+###########################
+*.swo
+*.swp
