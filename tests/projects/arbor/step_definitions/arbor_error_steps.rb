@@ -6,6 +6,6 @@ end
 
 Então /^ele NÃO deve ver a mensagem '(.+)'$/ do |arbor_message|
   on ArborErrorPage do |page|
-    page.html.should_not =~ /^.+#{Arbor_message}.+$/
+    page.html.should_not =~ /^.+#{arbor_message}.+$/
   end
 end
