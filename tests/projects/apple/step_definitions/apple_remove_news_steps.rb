@@ -5,6 +5,11 @@ Quando /^a Página da Notícia é excluída$/ do
   on AppleExcludeNewsPage do |page| page.news_exclude end
 end
 
+Quando /^a Página da Notícia sob moderação é excluída$/ do
+  on AppleExcludeEditNewsPage do |page| page.news_edit_exclude_workbench end
+  on AppleExcludeNewsPage do |page| page.news_exclude end
+end
+
 
 #Quando /^se realiza a '(.+)' e se confirma a '(.+)'$/ |initial_operation, end_operation|
 #  on MangoEditCampaignPage do |page| page.campaign_edit initial_operation, end_
