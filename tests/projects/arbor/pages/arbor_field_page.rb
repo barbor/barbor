@@ -9,17 +9,14 @@ class ArborFieldPage
 
   # The below method receives the label of a button, look for the received value on the HTML page, and then clicks on it.
   def click_button button_label
-    wait_for_ajax
-    self.execute_script "document.querySelector('[value="+button_label+"]').click();"
-    wait_for_ajax
+    sleep 1
+    self.execute_script "document.querySelector('[value=" + '"' + button_label + '"' + "]').click();"
   end
 
   # The below method receives the label of a field and the value that will be changed for that field
   # It already works for the following kind of fields: checkbox, radio button, text and select fields.
   def set_field field_label, field_value
-    field_id = self.full_content_element.html.match(/for=".+">#{field_label}/).to_s.sub('for="','').sub(">#{field_label}",'').chop
-    #field_id = self.html.match(/for=".+">#{field_label}/).to_s.sub('for="','').sub(">#{field_label}",'').chop
-
+    field_id = self.full_content_element.html.match(/(for=").+">#{field_label}/).to_s.sub(/^.+<\//,'').sub(/.+for="/,'').sub('for="','').sub(">#{field_label}",'').sub(/".+$/,'').sub('"', '')
     if field_value == 'Marcado'
       self.execute_script("document.getElementById('" + field_id  + "').checked = true;")
     elsif field_value == 'Desmarcado'
@@ -27,7 +24,6 @@ class ArborFieldPage
     else
 
       option_id = self.full_content_element.html.match(/value=".+">#{field_value}/).to_s.sub(/.+="/,'').sub(">#{field_value}",'').chop
-      #option_id = self.html.match(/value=".+">#{field_value}/).to_s.sub(/.+="/,'').sub(">#{field_value}",'').chop
 
       if option_id == ''
         self.execute_script("document.getElementById('" + field_id + "').value = '" + field_value + "';")
