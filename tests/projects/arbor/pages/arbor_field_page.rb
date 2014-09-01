@@ -11,6 +11,15 @@ class ArborFieldPage
   def click_button button_label
     sleep 1
     self.execute_script "document.querySelector('[value=" + '"' + button_label + '"' + "]').click();"
+    #self.execute_script "document.querySelector('[title=" + '"' + button_label + '"' + "]').click();"
+
+  end
+
+  def click_element_by_tag button_tag, button_tag_value
+    sleep 1
+    self.execute_script "document.querySelector('[" + button_tag + '="' + button_tag_value + '"' + "]').click();"
+    #self.execute_script "document.querySelector('[title=" + '"' + button_label + '"' + "]').click();"
+
   end
 
   # The below method receives the label of a field and the value that will be changed for that field
