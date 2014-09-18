@@ -4,6 +4,11 @@ Quando /^é definido para o Ckeditor com label '(.+)' o valor '(.+)'$/ do |ckedi
   visit ArborCkeditorPage do |page| page.set_ckeditor ckeditor_label, ckeditor_value end
 end
 
+Então /^o botão '(.+)' está presente no Ckeditor do campo '(.+)'$/ do |ckeditor_button_label, ckeditor_label|
+  visit ArborCkeditorPage do |page| page.check_button ckeditor_button_label, ckeditor_label end
+end
+
+
 # Quando /^é definido para o campo '(.+)' o valor '(.+)'$/ do |field_label, field_value|
 #   visit ArborFieldPage do |page| page.set_field field_label, field_value end
 # end
