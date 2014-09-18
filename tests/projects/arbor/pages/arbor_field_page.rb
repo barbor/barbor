@@ -7,6 +7,11 @@ class ArborFieldPage
 
   div :full_content, :id => 'content'
 
+  def press key
+    self.send_keys key
+    puts key
+  end
+
   # The below method receives the label of a button, look for the received value on the HTML page, and then clicks on it.
   def click_button button_label
     sleep 1
