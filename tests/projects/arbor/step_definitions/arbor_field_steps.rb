@@ -23,3 +23,11 @@ Quando /^o botão '(.+)' é pressionado por '(.+)' vezes$/ do |button_label, but
       puts times
     end
 end
+
+# Quando /^o botão '(.+)' é pressionado$/ do |button_label|
+#   on ArborFieldPage do |button| button.click_button button_label end
+# end
+
+Dado /^que é digitada a tecla '(.+)'$/ do |key|
+  on ArborFieldPage do |page| page.press key end
+end
