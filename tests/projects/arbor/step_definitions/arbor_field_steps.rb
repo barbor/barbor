@@ -1,5 +1,9 @@
 #encoding: utf-8
 
+Quando /^no campo '(.+)' é selecionada a opção '(.+)'$/ do |field_label, option|
+  on ArborFieldPage do |page| page.choose_by_label field_label, option end
+end
+
 Quando /^é definido para o campo '(.+)' o valor '(.+)'$/ do |field_label, field_value|
   visit ArborFieldPage do |page| page.set_field field_label, field_value end
 end

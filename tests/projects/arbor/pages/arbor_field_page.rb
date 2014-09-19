@@ -47,4 +47,14 @@ class ArborFieldPage
 
     end
   end
+
+  def choose_by_label field_label, option
+    field_id = self.html.match(/(for=").+">#{field_label}/).to_s.sub(/^.+<\//,'').sub(/.+for="/,'').sub('for="','').sub(">#{field_label}",'').sub(/".+$/,'').sub('"', '')
+    script = "var option_val = jQuery('#" + field_id + " option:contains(\""+  option + "\")\').attr('value');"
+    script.concat("jQuery('#edit-indicator').selectpicker('val', option_val).trigger('change');")
+    self.execute_script(script)
+  end
+
+
+
 end
