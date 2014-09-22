@@ -12,6 +12,16 @@ class ArborFieldPage
     puts key
   end
 
+  def submit id
+    self.execute_script "jQuery('#" + id + "').trigger('submit');"
+    #self.execute_script "jQuery('#custom-graph-form').click();"
+    #puts id
+
+    #jQuery('#custom-graph-form').trigger('submit');
+    #jQuery('#custom-graph-form').submit();
+
+  end
+
   # The below method receives the label of a button, look for the received value on the HTML page, and then clicks on it.
   def click_button button_label
     sleep 1

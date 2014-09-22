@@ -35,3 +35,7 @@ end
 Dado /^que é digitada a tecla '(.+)'$/ do |key|
   on ArborFieldPage do |page| page.press key end
 end
+
+E /^o elemento com a identificação '(.+)' é enviado$/ do |id|
+  on ArborFieldPage do |page| page.submit id end
+end
