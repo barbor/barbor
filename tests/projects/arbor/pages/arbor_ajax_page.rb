@@ -9,4 +9,9 @@ class ArborAjaxPage
     wait_for_ajax
   end
 
+  def sleeps_seconds seconds
+    time = seconds.to_i
+    sleep time
+  end
+
 end
