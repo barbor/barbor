@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class AppleHomePage 
+class AppleHomePage
   include PageObject
 
   PageObject.javascript_framework = :jquery
@@ -8,9 +8,12 @@ class AppleHomePage
   #expected_title 'Início | Grape'
   direct_url BASE_URL
 
-  text_field :search_box, :id => 'edit-keywords'
-  button :search, :id => 'edit-submit-generic-search'  
-  #button :search, :id => 'edit-submit-search'
+  #text_field :search_box, :id => 'edit-keywords'
+
+  text_field :search_box, :id => 'edit-keyword'
+
+  #button :search, :id => 'edit-submit-generic-search'
+  button :search, :id => 'edit-submit-search'
 
   def search_for search_term
 
