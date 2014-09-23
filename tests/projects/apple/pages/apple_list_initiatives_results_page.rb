@@ -3,6 +3,6 @@
 class AppleListInitiativesResultsPage 
   include PageObject
 
-  link :list_results, :text => 'Teste manual de iniciativa'
+  link :list_results, :text => 'Teste automático da iniciativa'
 
 end
