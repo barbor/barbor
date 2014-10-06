@@ -67,4 +67,8 @@ class ArborFieldPage
     self.execute_script(script)
   end
 
+  def set_element_value_by_tag_content html_tag, tag_content, value
+    self.execute_script "document.querySelector('[" + html_tag + '="' + tag_content + '"' + "]').value = '" + value + "';"
+  end
+
 end

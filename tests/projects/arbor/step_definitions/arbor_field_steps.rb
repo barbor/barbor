@@ -39,3 +39,7 @@ end
 E /^o elemento com a identificação '(.+)' é enviado$/ do |id|
   on ArborFieldPage do |page| page.submit id end
 end
+
+Dado /^que o elemento com a etiqueta '(.+)', de conteúdo '(.+)' recebe o valor '(.+)'$/ do |html_tag, tag_content, value|
+  on ArborFieldPage do |page| page.set_element_value_by_tag_content html_tag, tag_content, value end
+end
