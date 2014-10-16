@@ -12,7 +12,8 @@ class ArborMediaPage
 
     #link :choose_media, :class => 'button button-yes fake-ok', :frame => media_frame
 
-    link :choose_media, :class => 'button button-yes fake-submit media_default--media_browser_1 jquery-once-1-processed', :frame => media_frame
+    #link :choose_media, :class => 'button button-yes fake-submit media_default--media_browser_1 jquery-once-1-processed', :frame => media_frame
+    link :choose_media, :text => 'Enviar', :frame => media_frame
 
     #button button-yes fake-submit media_default--media_browser_1 jquery-once-1-processed
 
