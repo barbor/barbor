@@ -7,3 +7,7 @@ end
 Então /^o estado '(.+)' é subrepticiamente identificado$/ do |user_state|
   on MangoStatePage do |page| page.check_state user_state end
 end
+
+Então /^o estado '(.+)' é identificado$/ do |user_state|
+  on MangoStatePage do |page| page.check_state user_state end
+end
