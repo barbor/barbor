@@ -1,6 +1,10 @@
-#encoding: utf-8  
+#encoding: utf-8
 
 Quando /^'(.+)' e '(.+)' são declarados$/ do |user_cep, user_sufixo_cep|
+  on MangoCEPPage do |page| page.identify_address user_cep, user_sufixo_cep end
+end
+
+Quando /^digito o CEP '(\d+)\-(\d+)'$/ do |user_cep, user_sufixo_cep|
   on MangoCEPPage do |page| page.identify_address user_cep, user_sufixo_cep end
 end
 
