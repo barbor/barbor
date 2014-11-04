@@ -44,8 +44,14 @@ class ArborFieldPage
     field_id = self.html.match(/(for=").+">#{field_label}/).to_s.sub(/^.+<\//,'').sub(/.+for="/,'').sub('for="','').sub(">#{field_label}",'').sub(/".+$/,'').sub('"', '')
     if field_value == 'Marcado'
       self.execute_script("document.getElementById('" + field_id  + "').checked = true;")
+      self.execute_script("jQuery('#" + field_id + "').trigger('change');")
+
     elsif field_value == 'Desmarcado'
       self.execute_script("document.getElementById('" + field_id  + "').checked = false;")
+      #@todo: trigger('change') and jQuery needs a better treatement than this.
+      #by now, uncomment the bellow line or add it to other methods as needed
+      #self.execute_script("jQuery('#" + field_id + "').trigger('change');")
+
     else
 
       #option_id = self.full_content_element.html.match(/value=".+">#{field_value}/).to_s.sub(/.+="/,'').sub(">#{field_value}",'').chop
