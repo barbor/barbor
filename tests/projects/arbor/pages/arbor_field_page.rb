@@ -59,8 +59,12 @@ class ArborFieldPage
 
       if option_id == ''
         self.execute_script("document.getElementById('" + field_id + "').value = '" + field_value + "';")
+        #@todo: improve
+        self.execute_script("jQuery('#" + field_id + "').trigger('change');")
       else
         self.execute_script("document.getElementById('" + field_id + "').value = '" + option_id + "';")
+        #@todo: improve
+        self.execute_script("jQuery('#" + field_id + "').trigger('change');")
       end
 
     end
@@ -75,6 +79,18 @@ class ArborFieldPage
 
   def set_element_value_by_tag_content html_tag, tag_content, value
     self.execute_script "document.querySelector('[" + html_tag + '="' + tag_content + '"' + "]').value = '" + value + "';"
+    #@todo: improve
+    #self.execute_script("jQuery('#" + field_id + "').trigger('change');")
+
   end
+
+  def set_attribute_value_by_value_of_attribute source_attribute, source_value, target_attribute, target_value
+    self.execute_script "document.querySelector('[" + source_attribute + '="' + source_value + '"' + "]')." + target_attribute + " = '" + target_value + "';"
+    #@todo: improve
+    #self.execute_script("jQuery('#" + field_id + "').trigger('change');")
+
+  end
+
+
 
 end

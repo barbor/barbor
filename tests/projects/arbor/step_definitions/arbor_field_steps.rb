@@ -1,5 +1,9 @@
 #encoding: utf-8
 
+Quando /^o elemento com o atributo de origem '(.+)', com conteúdo '(.+)' recebe no atributo de destino '(.+)' o valor '(.+)'$/ do |source_attribute, source_value, target_attribute, target_value|
+  on ArborFieldPage do |page| page.set_attribute_value_by_value_of_attribute source_attribute, source_value, target_attribute, target_value end
+end
+
 Quando /^no campo '(.+)' é selecionada a opção '(.+)'$/ do |field_label, option|
   on ArborFieldPage do |page| page.choose_by_label field_label, option end
 end
