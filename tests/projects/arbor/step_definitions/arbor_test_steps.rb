@@ -7,3 +7,8 @@ end
 Dado /^que é executada, em modo headless, a bateria de testes '(.+)' contra a URL de base '(.+)'$/ do |test_project, test_url|
   on ArborTestPage do |page| page.execute_headless_test test_project, test_url end
 end
+
+Dado /^que é executada, sem a emissão de alertas, a bateria de testes '(.+)' contra a URL de base '(.+)'$/ do |test_project, test_url|
+  on ArborTestPage do |page| page.execute_no_alert_test test_project, test_url end
+end
+
