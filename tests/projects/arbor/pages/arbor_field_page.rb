@@ -5,10 +5,14 @@ class ArborFieldPage
 
   PageObject.javascript_framework = :jquery
 
+  # browser.evaluate_script('window.confirm = function() { return true; }')
   #div :full_content, :id => 'content'
 
   def press key
-    self.send_keys key
+    # self.send_keys key
+    # page.evaluate_script('window.confirm = function() { return true; }')
+    # page.click('Remove')
+    browser.send_keys key.to_sym
     puts key
   end
 
@@ -79,18 +83,23 @@ class ArborFieldPage
 
   def set_element_value_by_tag_content html_tag, tag_content, value
     self.execute_script "document.querySelector('[" + html_tag + '="' + tag_content + '"' + "]').value = '" + value + "';"
-    #@todo: improve
-    #self.execute_script("jQuery('#" + field_id + "').trigger('change');")
 
   end
 
   def set_attribute_value_by_value_of_attribute source_attribute, source_value, target_attribute, target_value
-    self.execute_script "document.querySelector('[" + source_attribute + '="' + source_value + '"' + "]')." + target_attribute + " = '" + target_value + "';"
-    #@todo: improve
-    #self.execute_script("jQuery('#" + field_id + "').trigger('change');")
+    # puts "entrou"
+    # puts source_attribute
+    # puts '|'
+    # puts source_value
+    # puts '|'
+    # puts target_attribute
+    # puts '|'
+    # puts target_value
+
+    # self.execute_script "document.querySelector('[" + source_attribute + '="' + source_value + '"]' + "').style." + target_attribute + "='" + target_value + "';"
+
+    self.execute_script "document.querySelector('[" + source_attribute + '="' + source_value + '"]' + "')." + target_attribute + "='" + target_value + "';"
+
 
   end
-
-
-
 end

@@ -1,5 +1,29 @@
 # encoding: utf-8
 
+class ArborKeyboardPage
+  include PageObject
+
+  PageObject.javascript_framework = :jquery
+
+  def press key_id
+    # browser.send_keys :f11
+    browser.send_keys key_id.to_sym
+    # browser.send_keys :page_down
+    # puts 'entrou'
+  end
+
+  # def scroll_page scroll_direction
+  #   if scroll_direction == 'Baixo'
+  #     browser.send_keys :page_down
+  #   elsif scroll_direction == 'Cima'
+  #     browser.send_keys :page_up
+  #   end
+  # end
+
+end
+
+
+
 # class ArborKeyboardPage
 #   include PageObject
 #
