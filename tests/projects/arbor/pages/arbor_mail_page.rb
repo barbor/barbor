@@ -17,9 +17,7 @@ class ArborMailPage
 
     if Mail.all.each do |target_message|
         if target_message[:From].to_s.include? sender_mail
-          puts 'passou'
         else
-          puts 'não passou'
           exit
         end
       end
