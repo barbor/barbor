@@ -16,13 +16,16 @@ class ArborMailPage
     end
 
     if Mail.all.each do |target_message|
-        if target_message[:From].to_s.include? sender_mail
-        else
-          exit
-        end
+      if target_message[:From].to_s.include? sender_mail
+        $mail_flag = true
+      else
+        abort("Message sender is: " + target_message[:From].to_s)
       end
-    else
-      exit
+    end
+    end
+
+    if $mail_flag != true
+      abort("No mail was received.")
     end
 
   end
