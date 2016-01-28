@@ -1,0 +1,7 @@
+# English translation of arbor_ajax_steps.rb
+msgid "o usuário aguarda pelo carregamento do ajax"
+msgstr ""
+msgid "o usuário aguarda "
+msgstr ""
+msgid " segundos"
+msgstr ""
